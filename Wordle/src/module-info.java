@@ -1,9 +1,0 @@
-/**
- * 
- */
-/**
- * @author Simjae
- *
- */
-module Wordle {
-}
