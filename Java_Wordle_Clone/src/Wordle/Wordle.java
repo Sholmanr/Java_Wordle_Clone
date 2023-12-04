@@ -34,6 +34,10 @@ public class Wordle {
 	{
 		setWord word = new setWord(); 
 	}
-
+	
+	public static void guess()
+	{
+		
+	}
 
 }
