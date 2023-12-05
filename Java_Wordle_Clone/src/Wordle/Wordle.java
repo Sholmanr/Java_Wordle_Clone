@@ -1,4 +1,7 @@
 package Wordle;
+
+import java.util.Scanner;
+import java.io.*;
 import java.util.Scanner; 
 
 public class Wordle {
@@ -29,15 +32,53 @@ public class Wordle {
 
 	}
 	
-	
+	// Calls Word class to set word for player to guess
 	public static void play() 
 	{
-		setWord word = new setWord(); 
+		String word = setWord(); // Calls the setWord method to get the word 
+		System.out.print(word);
 	}
 	
 	public static void guess()
 	{
 		
 	}
+	
+	// Sets the word that the player has to guess then returns it
+	public static String setWord()
+	{
+		
+	    String fileName = "Wordle_Words"; 
+	    String setWord = ""; 
+	    double i = Math.random() * 20; // Picks a random number to choose the letter from the list
+	    
+		try
+		{
+		// Opens the file and sets a Scanner to the list in order to iterate through it 
+		File newFile = new File(fileName);
+		FileReader fRead = new FileReader(newFile);
+		Scanner scnr = new Scanner(fRead);
+		
+		// Loops through the list until the word at the random number is found
+		while(scnr.hasNext() && i > 0)
+		{
+			setWord = scnr.next();
+			i--;
+		}
+		
+		// Closes both the Scanner and FileReader 
+		scnr.close();
+		fRead.close();
+		
+		}
+		catch(IOException e)
+		{
+			System.err.print("An IOExcpetion occurred " + e.getMessage());
+			e.printStackTrace();
+		}
+		
+		return setWord; 
+	}
+	
 
 }
