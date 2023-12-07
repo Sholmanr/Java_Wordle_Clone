@@ -39,9 +39,11 @@ public class Wordle {
 		System.out.print(word);
 	}
 	
+	// Gets the word the user wants to guess and compares it to the actual word
 	public static void guess()
 	{
-		
+		String guess = "";
+		char[] guessArr = segmentWord(guess);
 	}
 	
 	// Sets the word that the player has to guess then returns it
@@ -78,6 +80,13 @@ public class Wordle {
 		}
 		
 		return setWord; 
+	}
+	
+	// Separates the word into a char array then returns that char array
+	public static char[] segmentWord(String word)
+	{
+		char[] segmentedWord = new char[word.length() - 1];  
+		return segmentedWord; 
 	}
 	
 
